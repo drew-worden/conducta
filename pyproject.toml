@@ -11,6 +11,7 @@ python = "^3.12"
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.5.5"
 poethepoet = "^0.27.0"
+pre-commit = "^3.7.1"
 
 [tool.poe.tasks]
 format = "ruff format ."
