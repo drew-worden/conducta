@@ -10,8 +10,7 @@ A model orchestration library for the modern AI era with a focus on excellent de
   <a aria-label="License" href="https://github.com/drew-worden/conducta/blob/main/LICENSE"><img alt="" src="https://img.shields.io/github/license/drew-worden/conducta?style=for-the-badge&color=grey&labelColor=black"></a>
   <a aria-label="GitHub Stars" href="https://github.com/drew-worden/conducta"><img alt="" src="https://img.shields.io/github/stars/drew-worden/conducta?style=for-the-badge&color=grey&labelColor=black"></a>
   <a aria-label="PyPI Version" href="https://pypi.org/project/conducta/"><img alt="" src="https://img.shields.io/pypi/v/conducta?style=for-the-badge&color=grey&labelColor=black"></a>
-  <a aria-label="PyPI Downloads" href="https://pypi.org/project/conducta/"><img alt="" src="https://img.shields.io/pypi/dm/conducta
-?style=for-the-badge&color=grey&labelColor=black"></a>
+  <a aria-label="PyPI Downloads" href="https://pypi.org/project/conducta/"><img alt="" src="https://img.shields.io/pypi/dm/conducta?style=for-the-badge&color=grey&labelColor=black"></a>
 </p>
 
 ## What is Conducta
