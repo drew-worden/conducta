@@ -1,5 +1,5 @@
 <p align="center">
-      <img src="./assets/logo.png" height="96">
+      <img src="https://github.com/drew-worden/conducta/blob/main/assets/logo.png?raw=true" height="96">
     <h1 align="center">Conducta</h1>
 </p>
 
