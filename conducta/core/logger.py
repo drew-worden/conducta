@@ -1,65 +1,58 @@
-########################################################################################
-# FILE: logger.py                                                                      #
-# DESCRIPTION: This file contains the logger class and the color formatter classes.    #
-########################################################################################
+"""Logger module for the project."""
 
-########################################################################################
-# IMPORTS                                                                              #
-########################################################################################
-from logging import LogRecord
-import logging
+# Imports
 import copy
+import logging
+from logging import LogRecord
+from typing import ClassVar, Optional
 
-########################################################################################
-# COLOR FORMATTER FOR RENDERING COLOR LOGS STREAMED TO STDOUT                          #
-########################################################################################
+
 class ColorFormatter(logging.Formatter):
+    """Logging formatter that adds color to the log messages that stream to stdout."""
 
-    COLOR_CODES = {
-        'DEBUG': '\033[90m',    # Gray
-        'INFO': '\033[92m',     # Green
-        'WARNING': '\033[93m',  # Yellow
-        'ERROR': '\033[91m',    # Red
-        'CRITICAL': '\033[95m'  # Magenta
+    COLOR_CODES: ClassVar = {
+        "DEBUG": "\033[90m",  # Gray
+        "INFO": "\033[92m",  # Green
+        "WARNING": "\033[93m",  # Yellow
+        "ERROR": "\033[91m",  # Red
+        "CRITICAL": "\033[95m",  # Magenta
     }
-    RESET_CODE = '\033[0m'
+    RESET_CODE = "\033[0m"
 
     def format(self, record: LogRecord) -> str:
-            """
-            Formats the log record with color based on the log level.
+        """Format the log record with color."""
+        colored_record = copy.copy(record)
+        levelname = colored_record.levelname
+        log_color = self.COLOR_CODES.get(levelname, self.RESET_CODE)
+        colored_record.msg = f"{log_color}{colored_record.msg}{self.RESET_CODE}"
+        return super().format(colored_record)
 
-            Args:
-                record (LogRecord): The log record to be formatted.
-
-            Returns:
-                str: The formatted log message with color.
-
-            """
-            colored_record = copy.copy(record)
-            levelname = colored_record.levelname
-            log_color = self.COLOR_CODES.get(levelname, self.RESET_CODE)
-            colored_record.msg = f"{log_color}{colored_record.msg}{self.RESET_CODE}"
-            return super().format(colored_record)
-
-########################################################################################
-# GLOBAL LOGGING FORMATTER AND HANDLERS                                                #
-########################################################################################
 
 # Global formatters
-COLOR_FORMATTER = ColorFormatter('[%(asctime)s][%(levelname)s][%(name)s] - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
-NON_COLOR_FORMATTER = logging.Formatter('[%(asctime)s][%(levelname)s][%(name)s] - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+COLOR_FORMATTER = ColorFormatter(
+    "[%(asctime)s][%(levelname)s][%(name)s] - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+NON_COLOR_FORMATTER = logging.Formatter(
+    "[%(asctime)s][%(levelname)s][%(name)s] - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
 
 # Global handlers
 STREAM_HANDLER = logging.StreamHandler()
 STREAM_HANDLER.setFormatter(COLOR_FORMATTER)
 
-########################################################################################
-# LOGGER CLASS FOR LOGGING MESSAGES TO STDOUT AND LOG FILES. MEANT TO BE INITIALIZED   #
-# IN EVERY FILE. DEFAULT BEHAVIOR IS TO JUST STREAM TO STDOUT UNLESS A FILE NAME IS    #
-# PROVIDED                                                                             #
-########################################################################################
+
 class Logger:
-    def __init__(self, name: str, level: int = logging.INFO, file_name: str = None):
+    """Logger class for the project. Should be instantiated with the name of the module, in every file."""
+
+    def __init__(
+        self: "Logger",
+        name: str,
+        level: int = logging.INFO,
+        file_name: Optional[str] = None,
+    ) -> None:
+        """Initialize the logger with the name of the module."""
         self.logger = logging.getLogger(name)
         if not self.logger.handlers:
             self.logger.setLevel(level)
@@ -70,11 +63,18 @@ class Logger:
                 file_handler.setFormatter(NON_COLOR_FORMATTER)
                 self.logger.addHandler(file_handler)
 
-    def info(self, message: str):
+    def info(self: "Logger", message: str) -> None:
+        """Log an info message."""
         self.logger.info(message)
 
-    def error(self, message: str):
+    def error(self: "Logger", message: str) -> None:
+        """Log an error message."""
         self.logger.error(message)
 
-    def warning(self, message: str):
+    def warning(self: "Logger", message: str) -> None:
+        """Log a warning message."""
         self.logger.warning(message)
+
+    def debug(self: "Logger", message: str) -> None:
+        """Log a debug message."""
+        self.logger.debug(message)

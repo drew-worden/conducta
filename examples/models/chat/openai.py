@@ -1,3 +1,5 @@
+"""Example use of the OpenAI chat model."""
+
 # Imports
 from conducta.providers.openai import OpenAI
 
