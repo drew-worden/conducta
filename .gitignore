@@ -1,3 +1,7 @@
 # Generated
 dist
 __pycache__
+*.log
+
+# Secrets
+.env*
