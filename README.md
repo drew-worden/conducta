@@ -6,7 +6,7 @@
 A model orchestration library for the modern AI era with a focus on excellent developer experience.
 
 <p>
-  <a aria-label="GitHub Release" href="(https://github.com/drew-worden/conducta/releases"><img alt="" src="https://img.shields.io/github/release/drew-worden/conducta?style=for-the-badge&color=grey&labelColor=black"></a>
+  <a aria-label="GitHub Release" href="https://github.com/drew-worden/conducta/releases"><img alt="" src="https://img.shields.io/github/release/drew-worden/conducta?style=for-the-badge&color=grey&labelColor=black"></a>
   <a aria-label="License" href="https://github.com/drew-worden/conducta/blob/main/LICENSE"><img alt="" src="https://img.shields.io/github/license/drew-worden/conducta?style=for-the-badge&color=grey&labelColor=black"></a>
   <a aria-label="GitHub Stars" href="https://github.com/drew-worden/conducta"><img alt="" src="https://img.shields.io/github/stars/drew-worden/conducta?style=for-the-badge&color=grey&labelColor=black"></a>
   <a aria-label="PyPI Version" href="https://pypi.org/project/conducta/"><img alt="" src="https://img.shields.io/pypi/v/conducta?style=for-the-badge&color=grey&labelColor=black"></a>
