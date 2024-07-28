@@ -10,6 +10,7 @@ from conducta.core.logger import Logger
 # Logger
 logger = Logger(__name__, file_name="conducta.log")
 
+
 @lru_cache
 def load_credentials(self: "Credentials") -> None:
     """Load credentials from local environment or .env files for specific provider."""
@@ -18,9 +19,9 @@ def load_credentials(self: "Credentials") -> None:
     )
     current_dir_files = os.listdir(Path.cwd())
     env_files = [file for file in current_dir_files if file.startswith(".env")]
-    logger.debug(env_files)
+    logger.info(env_files)
     for cred in self.__annotations__:
-        logger.debug(cred)
+        logger.info(cred)
 
 
 class Credentials:

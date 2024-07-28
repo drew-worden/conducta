@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "conducta"
 version = "0.0.1"
-description = ""
+description = "A model orchestration library for the modern AI era with a focus on excellent developer experience."
 authors = ["drew-worden <drew.p.worden@gmail.com>"]
 readme = "README.md"
+repository = "https://github.com/drew-worden/conducta"
 
 [tool.poetry.dependencies]
 python = "^3.12"
