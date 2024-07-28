@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "conducta"
-version = "0.0.2"
+version = "0.0.3"
 description = "A model orchestration library for the modern AI era with a focus on excellent developer experience."
 authors = ["drew-worden <drew.p.worden@gmail.com>"]
 readme = "README.md"
