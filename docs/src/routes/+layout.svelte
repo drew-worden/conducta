@@ -1,13 +1,15 @@
 <script lang="ts">
 	// Imports
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics'
 	import Nav from "$lib/components/Nav.svelte"
 	import "open-props/style"
 	import "open-props/normalize"
 	import "open-props/buttons"
 	import "$lib/styles/global.css"
 
-	// Prerender
-	export const prerender = true
+	// Vercel Analytics
+	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <div class="layout">
