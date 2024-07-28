@@ -118,6 +118,23 @@ a {
 	text-decoration: none;
 }
 
+h1 {
+	font-family: var(--font-sans);
+}
+
+hr {
+	height: 1px;
+	background-color: var(--border);
+	width: 100%;
+	margin-block: 32px;
+}
+
+.dark-plus {
+	padding: 16px;
+	border-radius: 8px;
+	border: 1px solid var(--border);
+}
+
 .surface-1 {
 	background-color: var(--surface-1);
 	color: var(--text-2);

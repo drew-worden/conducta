@@ -5,6 +5,9 @@
 	import "open-props/normalize"
 	import "open-props/buttons"
 	import "$lib/styles/global.css"
+
+	// Prerender
+	export const prerender = true
 </script>
 
 <div class="layout">
